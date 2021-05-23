@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Reggae One', cursive;
+}
+
+.container{
+    margin: 3rem auto;
+    padding: 1.2rem;
+}
+
+#addBtn:hover{
+background-color: #198754;
+}
+.dl:hover{
+background-color: #ff1129!important;
+
+}
+footer{
+    background-color: #020202!important;
+    padding: 5px!important;
+    text-align: center;
+    color: azure;
+}
+footer>p{
+    margin-bottom: 0!important;
+}
+.foot{
+    float: right;
+    padding: 0rem 0.95rem!important;
+}
+
+.foot a{
+    color: white;
+
+}
