@@ -1,27 +1,41 @@
+
 // console.log("Hello");
-showNotes(); // calling here also because so that as page is loaded it again show 
-// Adding to local Storage the notes of user
+// method to show available notes
+showNotes(); 
 let addBtn = document.getElementById("addBtn");
+addBtn.addEventListener("click", () => {
+        let messagesuccess =document.getElementById("message");
+        messagesuccess.innerHTML = `
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong> You had successfully added your note!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        `;
+        setTimeout(() => {
+            messagesuccess.innerHTML = ``;
+        }, 6000);
+        
+});
 addBtn.addEventListener("click", () => {
 
     let addText = document.getElementById("addText");
     let addTitle = document.getElementById("addTitle");
-
-    let notes = localStorage.getItem("notes"); // checking local storage and name it to notes 
+// accessing local storage
+    let notes = localStorage.getItem("notes"); 
     if (notes === null) {
-        notesObj = [];// creating array here to null value
+        notesObj = [];
     }
     else {
-        notesObj = JSON.parse(notes); // adding value to array here what local storage is giving back
+        notesObj = JSON.parse(notes); 
     }
 
     let enterNotes = {
         title: addTitle.value,
         text: addText.value,
     }
-    notesObj.push(enterNotes);// pushing the new text from user into array
-    localStorage.setItem("notes", JSON.stringify(notesObj)); // updating local storage after user added a text 
-    addText.value = "";// again keep the text empty
+    notesObj.push(enterNotes);
+    localStorage.setItem("notes", JSON.stringify(notesObj)); 
+    addText.value = "";
     addTitle.value = "";
     // console.log(notesObj);
     showNotes();
@@ -31,14 +45,14 @@ addBtn.addEventListener("click", () => {
 
 // Show note Card function 
 function showNotes() {
-    let notes = localStorage.getItem("notes"); // checking local storage and name it to notes
+    let notes = localStorage.getItem("notes"); 
     if (notes === null) {
-        notesObj = [];// creating array here to null value
+        notesObj = [];
     }
     else {
-        notesObj = JSON.parse(notes); // adding value to array here what local storage is giving back
+        notesObj = JSON.parse(notes); 
     }
-    // Adding notes card as soon as add button is clicked
+
     let html = "";
     notesObj.forEach((element, index) => {
         html += `
@@ -72,20 +86,32 @@ function showNotes() {
 // Deleting notes
 function deleteButton(index) {
     // console.log("I am deleting", index);
-    let notes = localStorage.getItem("notes"); // checking local storage and name it to notes
+    let notes = localStorage.getItem("notes"); 
     if (notes === null) {
-        notesObj = [];// creating array here to null value
+        notesObj = [];
     }
     else {
-        notesObj = JSON.parse(notes); // adding value to array here what local storage is giving back
+        notesObj = JSON.parse(notes); 
     }
+    // remove first passed element and update further automatically
     notesObj.splice(index, 1);
-    // updating agin a local storage
-    localStorage.setItem("notes", JSON.stringify(notesObj)); // updating local storage after user added a text 
+    // converting notes into a string format
+    localStorage.setItem("notes", JSON.stringify(notesObj));
     showNotes();
+    let messagedelete =document.getElementById("message");
+    messagedelete.innerHTML = `
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Deleted!</strong> Oooppsss! You had deleted your note.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    `;
+    setTimeout(() => {
+        messagedelete.innerHTML = ``;
+    }, 6000);
+
 }
 
-// Now creating search button active
+// searching input
 let searchText = document.getElementById("searchTxt");
 searchText.addEventListener("input", () => {
     let inputLowerValue = searchText.value.toLowerCase();
@@ -100,4 +126,15 @@ searchText.addEventListener("input", () => {
         }
       
     });
+    let messageSearch =document.getElementById("message");
+    messageSearch.innerHTML = `
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <strong>Ready!</strong> Your searched note is right here.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    `;
+    setTimeout(() => {
+        messageSearch.innerHTML = ``;
+    }, 6000);
 });
+
