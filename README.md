@@ -16,3 +16,4 @@ The project we are building is “Note Taking Website App Using Pure JavaScript.
 <br>
 
 <a href="https://kartikey0205.github.io/My-Sticky-notes/" target="_blank">Go to Sticky Note App</a>
+<h5>Bookmark in your browser and have your own notes and Enjoy</h5>
