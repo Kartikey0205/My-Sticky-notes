@@ -4,6 +4,10 @@
     font-family: 'Reggae One', cursive;
     /* font-family: 'Source Code Pro', monospace; */
 }
+
+#message{
+    margin-top: 3.4rem;
+}
 .container{
     margin: 3rem auto;
     padding: 1.2rem;
