@@ -2,19 +2,17 @@
     margin: 0;
     padding: 0;
     font-family: 'Reggae One', cursive;
+    /* font-family: 'Source Code Pro', monospace; */
 }
-
 .container{
     margin: 3rem auto;
     padding: 1.2rem;
 }
-
 #addBtn:hover{
 background-color: #198754;
 }
 .dl:hover{
 background-color: #ff1129!important;
-
 }
 footer{
     background-color: #020202!important;
@@ -29,8 +27,6 @@ footer>p{
     float: right;
     padding: 0rem 0.95rem!important;
 }
-
 .foot a{
     color: white;
-
 }
