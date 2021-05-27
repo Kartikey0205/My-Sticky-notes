@@ -11,7 +11,8 @@ The project we are building is “Note Taking Website App Using Pure JavaScript.
 <h3>In Mobile View</h3>
 <br>
 <br>
-<img src="https://user-images.githubusercontent.com/66429038/119306944-8e113a80-bc88-11eb-8673-3cf42baf8d47.jpeg" width="200" height="400">
+
+<img src="https://user-images.githubusercontent.com/66429038/119306944-8e113a80-bc88-11eb-8673-3cf42baf8d47.jpeg" width="380" height="610"> <img src="https://user-images.githubusercontent.com/66429038/119848399-6987bd80-bf29-11eb-9aca-0ee5bec70a8c.jpeg" width ="380" height = "610" > 
 
 <br>
 
