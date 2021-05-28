@@ -6,6 +6,8 @@ The project we are building is “Note Taking Website App Using Pure JavaScript.
 <br>
 <img src="https://user-images.githubusercontent.com/66429038/119999388-550df880-bfef-11eb-8e70-52c7989c5707.png">
 
+#### Below are the old version!!
+<br>
 <h3>When Notes are available</h3>
 <img src="https://user-images.githubusercontent.com/66429038/119305699-b5670800-bc86-11eb-958c-5f84883f8e8f.png">
 <br>
