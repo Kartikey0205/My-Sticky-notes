@@ -2,6 +2,10 @@
 The project we are building is “Note Taking Website App Using Pure JavaScript.” We all have a notes app on our mobiles or laptop. Note-taking websites are the online equivalent of notebooks, and because they are digital, they can do more for you than paper ever could.
 <br>
 <br>
+## Latest update added Date and Time feature in it !!
+<br>
+<img src="https://user-images.githubusercontent.com/66429038/119999388-550df880-bfef-11eb-8e70-52c7989c5707.png">
+
 <h3>When Notes are available</h3>
 <img src="https://user-images.githubusercontent.com/66429038/119305699-b5670800-bc86-11eb-958c-5f84883f8e8f.png">
 <br>
