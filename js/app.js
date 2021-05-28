@@ -121,7 +121,7 @@ function showNotes() {
     <h5 class="card-title"  style="font-family: 'Bungee', cursive;">${element.date}</h5>
     
     <h6 class="card-title" id="clock" style="font-family: 'Bungee Inline', cursive;">${element.time}</h6>
-        <h5 class="card-title">${element.title}</h5>
+        <h2 class="card-title">${element.title}</h2>
         <p class="card-text">${element.text}</p>
         <button class="btn btn-warning dl" id="${index}" onclick="deleteButton(this.id)"><i class="fas fa-trash"></i> Delete Note</button>
         </div>
