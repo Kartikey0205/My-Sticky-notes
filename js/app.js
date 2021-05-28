@@ -1,6 +1,7 @@
 
 // console.log("Hello");
 // method to show available notes
+// let val =0;
 showNotes(); 
 let addBtn = document.getElementById("addBtn");
 addBtn.addEventListener("click", () => {
@@ -16,10 +17,15 @@ addBtn.addEventListener("click", () => {
         }, 6000);
         
 });
+
+// addBtn.addEventListener("click",()=>{
+//     document.getElementById("valDate").innerHTML = Date();
+// });
 addBtn.addEventListener("click", () => {
 
     let addText = document.getElementById("addText");
     let addTitle = document.getElementById("addTitle");
+    // let addDate = document.getElementById("addDate");
 // accessing local storage
     let notes = localStorage.getItem("notes"); 
     if (notes === null) {
@@ -30,18 +36,68 @@ addBtn.addEventListener("click", () => {
     }
 
     let enterNotes = {
+        date: noteDate(),
+        time : clocky(),
         title: addTitle.value,
         text: addText.value,
+        
     }
     notesObj.push(enterNotes);
     localStorage.setItem("notes", JSON.stringify(notesObj)); 
     addText.value = "";
     addTitle.value = "";
+    // addDate.value = "";
     // console.log(notesObj);
     showNotes();
 
 });
 
+
+
+
+var originalDate ,originalMonth,originalYear ,dt ,giveDate;
+function noteDate() {
+    dt = new Date();
+    originalDate = dt.getDate();
+    originalMonth = dt.getMonth();
+    originalYear = dt.getFullYear();
+    
+    
+    if (originalDate <= 9) {
+        originalDate = '0' + originalDate;
+    }
+    if (originalMonth <= 9) {
+        originalMonth = '0' + originalMonth;
+    }
+    if (originalYear <= 9) {
+        originalYear = '0' + originalYear;
+    }
+
+    return (giveDate = originalDate + `<span class= "slash">/</span>` + originalMonth + `<span class= "slash">/</span>` + originalYear);
+    
+}
+var dy, hr, min, sec, clock;
+
+function clocky() {
+    dy = new Date();
+    hr = dy.getHours();
+    min = dy.getMinutes();
+    sec = dy.getSeconds();
+    
+    
+    if (hr <= 9) {
+        hr = '0' + hr;
+    }
+    if (min <= 9) {
+        min = '0' + min;
+    }
+    if (sec <= 9) {
+        sec = '0' + sec;
+    }
+
+    return (clock = hr + `<span class= "colon">:</span>` + min + `<span class= "colon">:</span>` + sec);
+    
+}
 
 // Show note Card function 
 function showNotes() {
@@ -61,6 +117,10 @@ function showNotes() {
         border:1px solid black;
         ">
         <div class="card-body">
+    
+    <h5 class="card-title"  style="font-family: 'Bungee', cursive;">${element.date}</h5>
+    
+    <h6 class="card-title" id="clock" style="font-family: 'Bungee Inline', cursive;">${element.time}</h6>
         <h5 class="card-title">${element.title}</h5>
         <p class="card-text">${element.text}</p>
         <button class="btn btn-warning dl" id="${index}" onclick="deleteButton(this.id)"><i class="fas fa-trash"></i> Delete Note</button>
@@ -81,8 +141,13 @@ function showNotes() {
         ";>Nothing to show Kindly add a note first!</h2>`;
     }
 
+
 }
 
+// // Adding Date
+// function showDate(index) {
+//     return document.getElementById(index).innerHTML = Date();
+// }
 // Deleting notes
 function deleteButton(index) {
     // console.log("I am deleting", index);
