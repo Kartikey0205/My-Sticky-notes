@@ -59,7 +59,7 @@ var originalDate ,originalMonth,originalYear ,dt ,giveDate;
 function noteDate() {
     dt = new Date();
     originalDate = dt.getDate();
-    originalMonth = dt.getMonth();
+    originalMonth = dt.getMonth() + 1;
     originalYear = dt.getFullYear();
     
     
